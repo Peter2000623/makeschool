@@ -3,24 +3,26 @@
 import UIKit
 
 var str = "Hello, playground"
-class Check{
-    var test:String
-    var indication: Bool = true
+
     
-    init(test: String){
-    self.test = test
-    }
-    
-    func checkPaidrome() ->Bool{
-        for count in 1...test.characters.count{
+func checkPaidrome(test:String,countnumber:Int) ->Bool{
+        var indication=true
+        for count in 1...countnumber{
             let index1 = test.index(test.startIndex, offsetBy: count-1)
-            let index2 = test.index(test.startIndex, offsetBy: test.characters.count-count)
+            let index2 = test.index(test.startIndex, offsetBy: countnumber-count)
             if test[index1] != test[index2]{
              indication = false
             }
     }
         return indication
  }
+
+func length (string : String) -> Int{
+    var count = 0
+    for _ in string.characters{
+        count = count + 1
+    }
+    return count
 }
-var test=Check(test: "abc")
-test.checkPaidrome()
+var count=length(string: "usvdyicsydi")
+checkPaidrome(test: "usvdyicsydi", countnumber: count)
